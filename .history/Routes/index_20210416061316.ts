@@ -73,7 +73,7 @@ router.get('/contact-list', function(req, res, next)
       {
         return console.error(err);
       }
-      
+      console.log(contacts);
       res.json(contacts);
     });
 
@@ -85,5 +85,7 @@ router.get('/logout', function(req, res, next)
 {
   res.render('index', { title: 'Logout', page: 'logout', displayName: ''    });
 });
+
+
 
 module.exports = router;

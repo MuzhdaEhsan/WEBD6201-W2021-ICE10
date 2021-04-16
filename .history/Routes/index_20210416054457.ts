@@ -3,7 +3,7 @@ import express = require('express');
 const router = express.Router();
 
 //contact model
-import ContactModel = require("../Models/contact");
+const ContactModel = require("../Models/contact");
 
 const Contact = ContactModel.Model; // contact alias
 
@@ -67,15 +67,7 @@ router.get('/register', function(req, res, next)
 router.get('/contact-list', function(req, res, next) 
 {
     //res.render('index', { title: 'Contact List', page: 'contact-list', displayName: 'temp'  });
-
-    Contact.find(function(err, contacts){
-      if(err)
-      {
-        return console.error(err);
-      }
-      
-      res.json(contacts);
-    });
+    
 
 
   });
@@ -85,5 +77,7 @@ router.get('/logout', function(req, res, next)
 {
   res.render('index', { title: 'Logout', page: 'logout', displayName: ''    });
 });
+
+
 
 module.exports = router;

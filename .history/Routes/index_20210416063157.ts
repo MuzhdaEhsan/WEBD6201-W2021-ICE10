@@ -73,7 +73,7 @@ router.get('/contact-list', function(req, res, next)
       {
         return console.error(err);
       }
-      
+      console.log(contacts);
       res.json(contacts);
     });
 
